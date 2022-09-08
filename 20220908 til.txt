@@ -67,3 +67,85 @@ tracking 한다는 것은 로컬 repo와 원격 repo의 특정 브랜치를 연�
 
 push와 pull 은 기본적으로 tracking(추적)되고 있는 브랜치를 기준으로 commit 내역을 반영한다. 
 
+
+3주차 정리
+
+PR(Pull Request, 풀리퀘스트) 는 내 작업내역을 바로 merge 하지 않고, 참여하고 있는 프로젝트에 내 작업(branch)를 merge해달라고 요청(Request) 를 먼저 보내는 것
+
+Commit 관리하기
+
+ammend - 작업하다가 commit 메시지에 오타가 났거나 파일을 까먹고 add(staging)하는 경우
+이 때 최신의 commit을 수정하는 것을 **amend(어맨드,고치기)** 라고 한다. amend 로는 가장 최신의 commit 만 고칠 수 있다.
+
+revert - 다른 사람들과 같이 협업하고 있다면 어떤 내용이 되돌려졌는지 기록으로 남기는 것도 중요하다. 어떤 내용을 되돌렸는지 새로운 commit을 남기는 것을 revert(리버트) 라고 한다. 최신 commit 뿐만 아니라 이전에 했던 commit 도 revert 로 되돌릴 수 있다.
+
+reset (리셋) - commit 했던 작업내역을 말 그대로 리셋시키는 것
+
+stash(스태시) - 프로젝트의 변경사항을 임시적으로 보관해둘 때 사용. 
+                   예를 들면, 다른 branch 로 체크아웃 하는 경우 현재 branch 의 변경사항이 사라지게 되는데. 아직 작업 중이라서 commit 하지 않고 변경사항만 보관해두고 싶을 때 commit 대신 stash 를 사용. 
+
+
+의사소통편
+
+commit 메세지 작성하는 규칙은 commit 메시지 컨벤션(commit message convention)
+
+좋은 commit 메시지, 단위로 작성하게 되면
+  - 어떤 작업을 했는지 commit history (commit log)만 보고 알 수 있다
+  - 버그를 찾을 때와 코드 고치기 쉽다
+  - 다른 사람이 코드를 리뷰할 때 편하다
+
+코드 리뷰 - PR단계에서 내역에 댓글로 소통
+**코드리뷰를 하는 이유!**
+  - 코드의 품질을 높일 수 있다!
+  - 다른 사람의 눈으로 버그를 빠르게 발견할 수 있다!
+  - 서로의 지식을 나누면서, 더 나은 방법을 찾아낼 수 있습니다.
+    
+  **→ 내가 만든 코드가 아니라 팀의 코드의 품질을 높인다!**
+
+
+.gitignore  - 공유하거나 공개되면 안되는 파일들을 Git 이 마치 이런 파일들을 없는 것처럼 무시하게 하는 설정이다.
+
+README.md - Github 프로젝트에서도 README.md 를 만들어 프로젝트 소개글을 적어둔다.
+
+
+Github 에서 정보 얻고 나누기
+- Github 의 다른 사람 코드들을 맘껏 탐색했고!
+- Github 프로필 소개 페이지 작성, Github 페이지 만들기 를 해보았죠!
+- 오픈소스(Open source)란 누구나 프로젝트를 사용하고, 수정하고, 배포할 수 있는 프로젝트를 의미했어요. 라이센스를 꼭 지켜줍시다! 많은 사람들이 프로젝트에 **컨트리뷰션(contribution, 기여) 하면서 발전시켜나가는 것!** 그게 바로 오픈 소스의 매력이죠!
+- 그리고! Python, Go, Javascript, Spring, React, Django, Spark, Hadoop 등등 널리 쓰이는 많은 프로그래밍 언어와 기술들이 모두 오픈소스랍니다!
+
+앞으로 어떻게 Git 더 잘 써먹을 수 있을까요?
+
+가장 좋은 것은 내가 일상생활에서 쓸 수 있는 리포지토리를 만드는 것이에요! 
+아까 같이 만들었던 Github pages 를 발전시켜서 개발 블로그로 만들 수도 있고, 
+TIL repo 에 매일매일 알게 된 내용들을 commit 하고 push!
+
+1. Git 개념과 사용법이 더 궁금하다면! 공식 책 보기!
+    - 아래 책은 내가 에러가 나거나 사용하다가 막막해졌을 때 그때 찾아보세요. 책을 처음부터 끝까지 읽으면 힘들 수 있어요~ 추가적으로 Git 에 대한 개념과 상세한 옵션들이 궁금하시다면 꼭 이 책을 참고해보세요! 저도 종종 내용을 찾아보는 책 중에 하나랍니다.
+    https://git-scm.com/book/ko/v2
+
+2. Git 명령줄(CLI, Command Line Interface)로 사용해보기! 
+
+CLI 는 명령어(comm까만 창을 이야기합니다. 영화에서 해커가 까만 화면에 몇 줄 타타탁 타이핑해서 해킹하는 장면 많이 보셨죠?
+
+Terminal(까만 창 프로그램) 에서 명령어(Command Line) 으로 컴퓨터에게 명령을 내려 실행시키고 컴퓨터에게 메시지를 받는 것, 
+즉 명령줄로 컴퓨터와 상호작용(Interaction)하는 것을  CLI(Command Line Interface) 라고 부릅니다. 
+
+우리는 그동안 sourcetree에서 클릭클릭으로(이렇게 사용하는 것을 GUI라고 부릅니다) Git 을 사용해왔죠? 까만 창에 명령어를 입력해서 Git 을 사용할 수도 있습니다. 어떤 방법을 선택할 것인지는 상황에 맞게 선택하시면 됩니다!
+개발자들은 까만 창(terminal)을 많이 사용하기 때문에 따로 프로그램을 켜지 않고 git 을 쓸 수 있으니 편해서 사용하기도 합니다. 조금 더 설정을 주어서 사용하는 게 가능하다는 장점도 있어요.
+sourcetree에도 많은 기능과 시각적으로 commit 히스토리를 볼 수 있기 때문에 충분히 실제 회사에서 개발할 때와 중급까지 유용하게 사용할 수 있답니다!
+  Git 을 CLI 로 사용하려면 기본적인 터미널 사용을 먼저 익히는 걸 추천드려요!
+    
+  간단하게 보는 Git CLI 명령어: https://rogerdudler.github.io/git-guide/index.ko.html
+
+3. 내가 사용하는 개발 도구(IDE)에서 Git 사용하기
+
+- vscode, Pycharm, Intelij 같은 개발 도구들에서 Git을 사용할 수 있어요! 마치 우리가 sourcetree 를 사용해 Git 을 사용했던 것처럼요! 덧붙인 영상의 경우 한글 자막이 있습니다!
+
+VScode 에서 버전관리도구 사용하기 : https://code.visualstudio.com/docs/editor/versioncontrol
+Pycharm 에서 버전관리도구 사용하기 : https://www.youtube.com/watch?v=jFnYQbUZQlA
+Intellij 에서 버전관리 도구 사용하기 : https://www.youtube.com/watch?v=uUzRMOCBorg
+
+
+    
+
